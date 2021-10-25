@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+body {
+  overflow: hidden;
+}
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  height: 40px;
+  background-color: #333;
+  align-items: center;
+  position: relative;
+}
+nav .logo{
+  position: absolute;
+  left: 30px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 60%;
+  justify-content: space-evenly;
+}
+
+nav ul li a{
+  opacity: .80;
+  text-decoration: none;
+}
+nav ul li a:hover{
+  opacity: 1;
+}
+nav .toggle-btn {
+  display: none;
+  flex-direction: column;
+  height: 15px;
+  justify-content: space-between;
+  position: absolute;
+  right: 15px;
+  
+}
+nav .toggle-btn span{
+  background-color: white;
+  display: block;
+  height: 3px;
+  width: 20px;
+  border-radius: 2px;
+  transition: all 0.5s;
+}
+.rotate45 {
+  transform: translateY(6px) rotate(45deg);
+}
+.rotate-45 {
+  transform: translateY(-6px) rotate(-45deg);
+}
+.dimmed {
+  transform: scale(0);
+}
+@media screen and (max-width: 768px) {
+  nav .logo{
+    position: static;
+  }
+  nav {
+    justify-content: flex-start;
+  }
+  nav ul {
+    width: fit-content;
+  }
+  nav:nth-child(1){
+    padding: 0 20px;
+  }
+  nav ul li {
+    padding: 10px;
+  }
+  nav ul li:nth-child(1) {
+    padding-left: 20px;
+  }
+}
+@media screen and (max-width: 567px) {
+  nav .toggle-btn {
+    display: flex;
+    cursor: pointer;
+  }
+  nav ul li:nth-child(1) {
+    padding-left: 10px;
+  }
+  nav ul li {
+    width: 100%;
+    border-bottom: 0.0001pt solid rgb(119, 117, 117);
+  }
+  nav ul li a {
+    display: inline-block;
+    width: 100%;
+  }
+  nav ul li:hover {
+    background-color: rgb(48, 45, 45);
+  }
+  nav ul {
+    /* display: none; */
+    width:50vw;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #333;
+    transform: translateX(100%);
+    z-index: -1;
+    transition: 0.8s;
+    opacity: .1;
+  }
+  nav ul.slide{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
